@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+}
+
+body {
+    /* colors */
+    --blue: #19aaff;
+    --blue-accent: #1888ff;
+    --green: #19a858;
+    --green-accent: #178b44;
+    --pink: #ffadf6;
+    --pink-accent: #ff87c9;
+    --yellow: #fed01a;
+    --yellow-accent: #feb919 ;
+    --orange: #f58139;
+    --orange: #f57526;
+    --background: #ffecec;
+
+    
+    background-color: var(--background);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    background-color: var(--blue);
+    border-bottom: solid 1em var(--blue-accent);
+    border-right: solid 2em var(--blue-accent);
+    border-radius: 0 0 20px 0;
+
+    color: var(--background);
+    height: 10em;
+}
+
+h1 {
+    text-align: center;
+    padding: 2em 0 ;
+}
+
+/* MENU */
+    #menu {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    #menuTog { 
+        width: 5em;
+        height: 5em;
+        cursor: pointer;
+    }
+
+    #ham, #noHam {
+        font-size: 2.5em;
+        cursor: pointer;
+    }
+
+    #noHam {
+        display: none;
+        padding-left: 10px;
+    }
+
+    #menu ol {
+        font-size: 1em;
+    }
+
+    /* actual box not visible */
+    input[type=checkbox] {
+        display: none;
+    }
+
+    /* menu default not-expanded */
+    input[type=checkbox] ~ ol{
+        display: none;
+    }
+
+    /* menu expandw on click */
+    input[type=checkbox]:checked ~ ol {
+        display: block;
+    }
+
+    input[type=checkbox]:checked ~ #ham {
+        display: none;
+    }
+
+    input[type=checkbox]:checked ~ #noHam {
+        display: block;
+    }
+
+    nav {
+        margin: 0;
+    }
+
+    nav ol {
+        padding: 0;
+        margin: 0;
+        transition: all ease-in-out;
+
+    }
+    nav li {
+        display: block;
+        background-color: var(--contrast-color);
+        position: relative;
+        z-index: 500;
+    }
+
+    nav li a {
+        display: block;
+        height: 1em;
+        /* width: 10em; */
+        text-decoration: none;
+        color: var(--main-color);
+        text-align: left;
+        padding: .75em;
+    }
+
+    nav a:hover {
+        text-decoration: none;
+        background-color: var(--third-color);
+        color: var(--contrast-color);
+        /* transition: background-color ease-in-out; */
+    }
